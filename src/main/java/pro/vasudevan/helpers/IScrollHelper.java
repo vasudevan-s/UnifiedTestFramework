@@ -7,6 +7,11 @@ import pro.vasudevan.constants.Global;
 import java.util.HashMap;
 import java.util.Map;
 
+/*
+Created By: Vasudevan Sampath
+
+ IScrollHelper.java has helper methods for scrolling
+ */
 public interface IScrollHelper {
     static void swipe(Global.SwipeOptions swipeOptions) {
         AppiumDriver appiumDriver = (AppiumDriver) IDriverConfig.getDriver();
