@@ -10,6 +10,14 @@
     <list default="true" id="dd9b5b73-80bf-4dc3-bbb3-78d7717a1e27" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pro/vasudevan/base/TestBase.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pro/vasudevan/config/DriverConfigurator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pro/vasudevan/config/IDriverConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pro/vasudevan/config/IDriverConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pro/vasudevan/config/MobileTestConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pro/vasudevan/config/SimulatorMobileTestConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pro/vasudevan/config/WebTestConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pro/vasudevan/constants/Global.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pro/vasudevan/constants/Global.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pro/vasudevan/misc/Common.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pro/vasudevan/misc/Common.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,13 +27,16 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,

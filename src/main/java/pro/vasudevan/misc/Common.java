@@ -15,11 +15,13 @@ import java.util.UUID;
 /*
 Created By: Vasudevan Sampath
 
- Common.java has a generic static method for explicit wait and for taking screenshots.
+ Common.java has utility methods
  */
 public class Common {
     public static <T> T waitForAnyExpectedCondition(ExpectedCondition<T> expectedCondition, int... waitInSeconds) throws TimeoutException
     {
+        // waitInSeconds param is optional. If not given, defaults to 20 seconds. If given, uses the first element
+        // in the array and the rest is ignored
         int waitTime = waitInSeconds.length == 0 ? 20 : waitInSeconds[0];
 
         return new FluentWait<>(IDriverConfig.getDriver())
