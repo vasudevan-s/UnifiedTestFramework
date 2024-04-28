@@ -5,7 +5,6 @@ This is a unified test framework for mobile (iOS and Android) and web automation
     Java 21 (can be used with any Java version starting with 8).
     Appium 2.x or greater
     Selenium 4.x or any newer version
-    ReportNG 2.7
 
 To compile as a jar, mvn clean install
 

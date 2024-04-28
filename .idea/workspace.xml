@@ -10,11 +10,6 @@
     <list default="true" id="dd9b5b73-80bf-4dc3-bbb3-78d7717a1e27" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pro/vasudevan/config/IDriverConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pro/vasudevan/config/IDriverConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pro/vasudevan/constants/Global.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pro/vasudevan/constants/Global.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pro/vasudevan/helpers/IScrollHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pro/vasudevan/helpers/IScrollHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pro/vasudevan/listeners/TestListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pro/vasudevan/listeners/TestListener.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
