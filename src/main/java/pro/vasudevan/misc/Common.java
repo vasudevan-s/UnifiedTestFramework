@@ -41,4 +41,7 @@ public class Common {
         FileUtils.copyFile(source, new File(targetImagePath));
         return targetImagePath;
     }
+    public static void runTerminalCommand(String command) throws Exception {
+        new ProcessBuilder(command).start();
+    }
 }

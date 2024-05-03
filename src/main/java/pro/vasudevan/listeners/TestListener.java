@@ -1,6 +1,5 @@
 package pro.vasudevan.listeners;
 
-import org.openqa.selenium.WebDriver;
 import org.testng.*;
 import pro.vasudevan.config.IDriverConfig;
 import pro.vasudevan.misc.Common;
