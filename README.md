@@ -43,10 +43,10 @@ Setting up your environment for Appium (iOS/Android) and Selenium automation:
 19. Run Appium Inspector and setup configs for iOS and Android
 20. Reinstall Xcode if any errors
 21. If Android issue on real device,
-    adb uninstall io.appium.uiautomator2.server
-    adb uninstall io.appium.uiautomator2.server.test
-    adb uninstall io.appium.unlock
-    adb uninstall io.appium.settings
+    * adb uninstall io.appium.uiautomator2.server
+    * adb uninstall io.appium.uiautomator2.server.test
+    * adb uninstall io.appium.unlock
+    * adb uninstall io.appium.settings
 22. Check in Xcode Settings…Location for simulator -> may ask to confirm password
 23. Run: appium-doctor and fix any issues
 ****************************************************************************************************************************************************
