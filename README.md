@@ -17,15 +17,16 @@ Setting up your environment for Appium (iOS/Android) and Selenium automation:
 1. /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 2. (echo; echo 'eval "$(/opt/homebrew/bin/brew shellenv)"') >> /Users/vasudevan/.zprofile
 3. eval "$(/opt/homebrew/bin/brew shellenv)"
-4. brew install node
-5. brew install java 
-6. nano $HOME/.zshenv
+4. Install XCode from App Store
+5. brew install node
+6. brew install java 
+7. nano $HOME/.zshenv
     * export JAVA_HOME=$(/usr/libexec/java_home)
     * export PATH=${PATH}:$JAVA_HOME
     * export PATH=${PATH}:$JAVA_HOME/bin
-7. sudo ln -sfn /opt/homebrew/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
-8. brew install maven
-9. brew install --HEAD ideviceinstaller
+8. sudo ln -sfn /opt/homebrew/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
+9. brew install maven
+10. brew install --HEAD ideviceinstaller
 11. brew install carthage
 12. brew install ffmpeg
 13. npm install -g appium
