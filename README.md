@@ -1,4 +1,5 @@
-This is a unified test framework for mobile (iOS and Android) and web automation. This project showcases automation best practices using the following open source tools:
+This is a unified test framework for mobile (iOS and Android) and web automation. 
+This project showcases automation best practices using the following open source tools:
 
     TestNG
     Apache Maven
