@@ -48,5 +48,5 @@ Setting up your environment for Appium (iOS/Android) and Selenium automation:
     * adb uninstall io.appium.unlock
     * adb uninstall io.appium.settings
 22. Check in Xcode Settings…Location for simulator -> may ask to confirm password
-23. Run: appium-doctor and fix any issues
+23. Run: appium-doctor and fix any issues (if any)
 ****************************************************************************************************************************************************
