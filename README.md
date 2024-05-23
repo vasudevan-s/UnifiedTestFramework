@@ -15,7 +15,7 @@ The intent of this project is for illustrative purposes only. The code can be fr
 Setting up your environment for Appium (iOS/Android) and Selenium automation:
 
 1. /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-2. (echo; echo 'eval "$(/opt/homebrew/bin/brew shellenv)"') >> /Users/<yourusername>/.zprofile
+2. (echo; echo 'eval "$(/opt/homebrew/bin/brew shellenv)"') >> /Users/your user name/.zprofile
 3. eval "$(/opt/homebrew/bin/brew shellenv)"
 4. Install XCode from App Store
 5. brew install node
