@@ -33,12 +33,12 @@ public interface IAppiumResourceHelper {
             }
         }
 
+        @Deprecated
         static int getRandomAndroidSystemPort() {
-            Random random = new Random();
-            return random.nextInt(8200, 8299);
-//            return new Random().nextInt(8200, 8299);
+            return new Random().nextInt(8200, 8299);
         }
 
+        @Deprecated
         static void clearAllAndroidSystemPorts(String udid) throws Exception {
             Common.runTerminalCommand("adb -s " + udid + " forward --remove-all");
         }

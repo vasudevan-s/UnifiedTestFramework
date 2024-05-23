@@ -2,7 +2,7 @@ package pro.vasudevan.helpers;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.ios.IOSDriver;
-import pro.vasudevan.config.IDriverConfig;
+import pro.vasudevan.config.IWebDriverConfig;
 import pro.vasudevan.constants.Global;
 
 import java.util.HashMap;
@@ -15,7 +15,7 @@ Created By: Vasudevan Sampath
  */
 public interface IScrollHelper {
     static void swipe(Global.SwipeOptions swipeOptions) {
-        AppiumDriver appiumDriver = (AppiumDriver) IDriverConfig.getDriver();
+        AppiumDriver appiumDriver = (AppiumDriver) IWebDriverConfig.getDriver();
         if (appiumDriver instanceof IOSDriver) {
             Map<String, String> swipeObj = new HashMap<>();
             swipeObj.put("direction", swipeOptions.toString());

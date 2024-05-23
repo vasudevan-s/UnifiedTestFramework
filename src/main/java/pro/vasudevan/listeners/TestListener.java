@@ -1,7 +1,7 @@
 package pro.vasudevan.listeners;
 
 import org.testng.*;
-import pro.vasudevan.config.IDriverConfig;
+import pro.vasudevan.config.IWebDriverConfig;
 import pro.vasudevan.misc.Common;
 
 import java.io.IOException;
@@ -15,7 +15,7 @@ public class TestListener extends TestListenerAdapter {
 
     @Override
     public void onTestFailure(ITestResult result) {
-        if (IDriverConfig.getDriver() != null) {
+        if (IWebDriverConfig.getDriver() != null) {
             try {
                 String filePath = Common.takeScreenshot();
                 Reporter.log("<a title= \"title\" href=\"../../../" + filePath + "\">" +

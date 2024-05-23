@@ -22,10 +22,10 @@ import java.util.Map;
 /*
 Created By: Vasudevan Sampath
 
- IDriverConfig.java has static methods for Selenium/Appium driver specifics.
- Support iOS, Android and browser based drivers
+ IWebDriverConfig.java has static methods for Selenium/Appium driver specifics.
+ Supports iOS, Android and browser based drivers
  */
-public interface IDriverConfig {
+public interface IWebDriverConfig {
     ThreadLocal<WebDriver> threadLocalDriver = new ThreadLocal<>();
 
     static void initDriver(ITestContext testContext) {
@@ -75,9 +75,11 @@ public interface IDriverConfig {
                     case "safari":
                         WebDriverManager.safaridriver().setup();
                         threadLocalDriver.set(new SafariDriver());
+                        break;
                     case "firefox":
                         WebDriverManager.firefoxdriver().setup();
                         threadLocalDriver.set(new FirefoxDriver());
+                        break;
                 }
                 threadLocalDriver.get().get(map.get("launchURL"));
                 threadLocalDriver.get().manage().window().maximize();

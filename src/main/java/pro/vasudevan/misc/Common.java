@@ -1,15 +1,17 @@
 package pro.vasudevan.misc;
 
 import org.apache.commons.io.FileUtils;
-import pro.vasudevan.config.IDriverConfig;
+import pro.vasudevan.config.IWebDriverConfig;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.FluentWait;
 import pro.vasudevan.constants.Global;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.time.Duration;
+import java.util.Properties;
 import java.util.UUID;
 
 /*
@@ -17,14 +19,17 @@ Created By: Vasudevan Sampath
 
  Common.java has utility methods
  */
-public class Common {
+public final class Common {
+
+    private static final Properties properties = new Properties();
+
     public static <T> T waitForAnyExpectedCondition(ExpectedCondition<T> expectedCondition, int... waitInSeconds) throws TimeoutException
     {
         // waitInSeconds param is optional. If not given, defaults to 20 seconds. If given, uses the first element
         // in the array and the rest is ignored
         int waitTime = waitInSeconds.length == 0 ? 20 : waitInSeconds[0];
 
-        return new FluentWait<>(IDriverConfig.getDriver())
+        return new FluentWait<>(IWebDriverConfig.getDriver())
                 .pollingEvery(Duration.ofMillis(100))
                 .ignoring(NotFoundException.class)
                 .ignoring(NoSuchElementException.class)
@@ -36,7 +41,7 @@ public class Common {
     }
     public static String takeScreenshot() throws IOException {
         final String targetImagePath = Global.SCREENSHOTS_FOLDER + "/" + UUID.randomUUID() + ".jpg";
-        TakesScreenshot takesScreenshot = (TakesScreenshot) IDriverConfig.getDriver();
+        TakesScreenshot takesScreenshot = (TakesScreenshot) IWebDriverConfig.getDriver();
         File source = takesScreenshot.getScreenshotAs(OutputType.FILE);
         FileUtils.copyFile(source, new File(targetImagePath));
         return targetImagePath;
