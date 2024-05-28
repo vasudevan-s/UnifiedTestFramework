@@ -21,8 +21,6 @@ Created By: Vasudevan Sampath
  */
 public final class Common {
 
-    private static final Properties properties = new Properties();
-
     public static <T> T waitForAnyExpectedCondition(ExpectedCondition<T> expectedCondition, int... waitInSeconds) throws TimeoutException
     {
         // waitInSeconds param is optional. If not given, defaults to 20 seconds. If given, uses the first element
@@ -39,6 +37,7 @@ public final class Common {
                         + expectedCondition + " in the given timeout period: " + waitTime)
                 .until(expectedCondition);
     }
+
     public static String takeScreenshot() throws IOException {
         final String targetImagePath = Global.SCREENSHOTS_FOLDER + "/" + UUID.randomUUID() + ".jpg";
         TakesScreenshot takesScreenshot = (TakesScreenshot) IWebDriverConfig.getDriver();
@@ -46,6 +45,7 @@ public final class Common {
         FileUtils.copyFile(source, new File(targetImagePath));
         return targetImagePath;
     }
+
     public static void runTerminalCommand(String command) throws Exception {
         new ProcessBuilder(command).start();
     }

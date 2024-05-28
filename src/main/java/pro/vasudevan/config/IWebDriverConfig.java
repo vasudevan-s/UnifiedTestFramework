@@ -48,7 +48,7 @@ public interface IWebDriverConfig {
                     threadLocalDriver.set(new IOSDriver(appiumDriverLocalService.getUrl(), xcuiTestOptions));
                 }
             }
-            case Global.Android_UIAutomator2 -> {
+            case Global.Android_UIAutomator -> {
                 UiAutomator2Options uiAutomator2Options = new UiAutomator2Options();
                 uiAutomator2Options.setUdid(map.get("udid"));
                 uiAutomator2Options.setPlatformName("Android");
