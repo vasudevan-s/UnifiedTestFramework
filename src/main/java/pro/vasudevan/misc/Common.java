@@ -8,10 +8,8 @@ import org.openqa.selenium.support.ui.FluentWait;
 import pro.vasudevan.constants.Global;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.time.Duration;
-import java.util.Properties;
 import java.util.UUID;
 
 /*
@@ -26,7 +24,6 @@ public final class Common {
         // waitInSeconds param is optional. If not given, defaults to 20 seconds. If given, uses the first element
         // in the array and the rest is ignored
         int waitTime = waitInSeconds.length == 0 ? 20 : waitInSeconds[0];
-
         return new FluentWait<>(IWebDriverConfig.getDriver())
                 .pollingEvery(Duration.ofMillis(100))
                 .ignoring(NotFoundException.class)

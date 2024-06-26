@@ -14,7 +14,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
 import org.testng.ITestContext;
 import pro.vasudevan.constants.Global;
-import pro.vasudevan.helpers.IAppiumResourceHelper;
+import pro.vasudevan.helpers.IAppiumHelper;
 
 import java.time.Duration;
 import java.util.Map;
@@ -39,12 +39,12 @@ public interface IWebDriverConfig {
                 xcuiTestOptions.setPlatformVersion(map.get("platformVersion"));
                 xcuiTestOptions.setPlatformName(map.get("platformName"));
                 xcuiTestOptions.setAutomationName(map.get("automationName"));
-                xcuiTestOptions.setWdaLocalPort(IAppiumResourceHelper.getAnyAvailablePort());
+                xcuiTestOptions.setWdaLocalPort(IAppiumHelper.getAnyAvailablePort());
                 xcuiTestOptions.setWdaLaunchTimeout(Duration.ofSeconds(600));
                 xcuiTestOptions.setBundleId(map.get("bundleId"));
                 xcuiTestOptions.setUseNewWDA(false);
                 xcuiTestOptions.setNewCommandTimeout(Duration.ofSeconds(600));
-                try (AppiumDriverLocalService appiumDriverLocalService = IAppiumResourceHelper.start(GeneralServerFlag.RELAXED_SECURITY)) {
+                try (AppiumDriverLocalService appiumDriverLocalService = IAppiumHelper.start(GeneralServerFlag.RELAXED_SECURITY)) {
                     threadLocalDriver.set(new IOSDriver(appiumDriverLocalService.getUrl(), xcuiTestOptions));
                 }
             }
@@ -57,12 +57,12 @@ public interface IWebDriverConfig {
                 uiAutomator2Options.setNewCommandTimeout(Duration.ofSeconds(600));
                 uiAutomator2Options.setAppPackage(map.get("packageName"));
                 uiAutomator2Options.setAppActivity(map.get("activityName"));
-                uiAutomator2Options.setCapability("appium:systemPort", IAppiumResourceHelper.getAnyAvailablePort());
-                try (AppiumDriverLocalService appiumDriverLocalService = IAppiumResourceHelper.start(GeneralServerFlag.RELAXED_SECURITY)) {
+                uiAutomator2Options.setCapability("appium:systemPort", IAppiumHelper.getAnyAvailablePort());
+                try (AppiumDriverLocalService appiumDriverLocalService = IAppiumHelper.start(GeneralServerFlag.RELAXED_SECURITY)) {
                     threadLocalDriver.set(new AndroidDriver(appiumDriverLocalService.getUrl(), uiAutomator2Options));
                 }
             }
-            default -> {
+            case null -> {
                 switch (map.get("browserName").toLowerCase()) {
                     case "chrome":
                         WebDriverManager.chromedriver().setup();
@@ -85,6 +85,7 @@ public interface IWebDriverConfig {
                 threadLocalDriver.get().manage().window().maximize();
                 threadLocalDriver.get().manage().deleteAllCookies();
             }
+            default -> throw new IllegalStateException("Unexpected value: " + map.get("automationName"));
         }
     }
 

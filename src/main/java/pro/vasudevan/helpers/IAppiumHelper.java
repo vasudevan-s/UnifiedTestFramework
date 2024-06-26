@@ -12,9 +12,9 @@ import java.util.Random;
 /*
 Created By: Vasudevan Sampath
 
- IAppiumServiceHelper.java starts Appium server with dynamic port allocation
+ IAppiumHelper.java starts Appium server with dynamic port allocation
  */
-public interface IAppiumResourceHelper {
+public interface IAppiumHelper {
         static AppiumDriverLocalService start(GeneralServerFlag generalServerFlag) {
             AppiumDriverLocalService appiumDriverLocalService =
                     new AppiumServiceBuilder()
