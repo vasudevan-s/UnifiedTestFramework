@@ -70,14 +70,14 @@ public interface IWebDriverConfig {
                     case "chrome":
                         WebDriverManager.chromedriver().setup();
                         ChromeOptions chromeOptions = new ChromeOptions();
-                        chromeOptions.addArguments("start-maximized");
-                        threadLocalDriver.set(new ChromeDriver());
+                        chromeOptions.addArguments("--start-maximized");
+                        threadLocalDriver.set(new ChromeDriver(chromeOptions));
                         break;
                     case "msedge":
                         WebDriverManager.edgedriver().setup();
                         EdgeOptions edgeOptions = new EdgeOptions();
-                        edgeOptions.addArguments("start-maximized");
-                        threadLocalDriver.set(new EdgeDriver());
+                        edgeOptions.addArguments("--start-maximized");
+                        threadLocalDriver.set(new EdgeDriver(edgeOptions));
                         break;
                     case "safari":
                         WebDriverManager.safaridriver().setup();

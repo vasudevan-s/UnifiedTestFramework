@@ -9,9 +9,7 @@
   <component name="ChangeListManager">
     <list default="true" id="dd9b5b73-80bf-4dc3-bbb3-78d7717a1e27" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pro/vasudevan/config/IWebDriverConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pro/vasudevan/config/IWebDriverConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pro/vasudevan/misc/Common.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pro/vasudevan/misc/Common.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
