@@ -1,6 +1,8 @@
 package pro.vasudevan.misc;
 
 import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import pro.vasudevan.config.IWebDriverConfig;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedCondition;
@@ -11,6 +13,7 @@ import java.io.File;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.UUID;
+import java.util.concurrent.TimeUnit;
 
 /*
 Created By: Vasudevan Sampath
@@ -33,6 +36,10 @@ public final class Common {
                 .withMessage("Element not accessible with the expected condition(s): "
                         + expectedCondition + " in the given timeout period: " + waitTime)
                 .until(expectedCondition);
+    }
+
+    public static void sleep(int milliseconds) throws InterruptedException {
+        Thread.sleep(milliseconds);
     }
 
     public static String takeScreenshot() throws IOException {

@@ -9,7 +9,9 @@ import io.appium.java_client.service.local.flags.GeneralServerFlag;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
 import org.testng.ITestContext;
@@ -18,6 +20,7 @@ import pro.vasudevan.helpers.IAppiumHelper;
 
 import java.time.Duration;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 /*
 Created By: Vasudevan Sampath
@@ -28,7 +31,7 @@ Created By: Vasudevan Sampath
 public interface IWebDriverConfig {
     ThreadLocal<WebDriver> threadLocalDriver = new ThreadLocal<>();
 
-    static void initDriver(ITestContext testContext) {
+    static void initDriver(ITestContext testContext) throws InterruptedException {
         Map<String, String> map = testContext.getCurrentXmlTest().getLocalParameters();
 
         switch (map.get("automationName")) {
@@ -66,24 +69,31 @@ public interface IWebDriverConfig {
                 switch (map.get("browserName").toLowerCase()) {
                     case "chrome":
                         WebDriverManager.chromedriver().setup();
+                        ChromeOptions chromeOptions = new ChromeOptions();
+                        chromeOptions.addArguments("start-maximized");
                         threadLocalDriver.set(new ChromeDriver());
                         break;
                     case "msedge":
                         WebDriverManager.edgedriver().setup();
+                        EdgeOptions edgeOptions = new EdgeOptions();
+                        edgeOptions.addArguments("start-maximized");
                         threadLocalDriver.set(new EdgeDriver());
                         break;
                     case "safari":
                         WebDriverManager.safaridriver().setup();
                         threadLocalDriver.set(new SafariDriver());
+                        threadLocalDriver.get().manage().window().maximize();
                         break;
                     case "firefox":
                         WebDriverManager.firefoxdriver().setup();
                         threadLocalDriver.set(new FirefoxDriver());
+                        threadLocalDriver.get().manage().window().maximize();
                         break;
                 }
+                threadLocalDriver.get().manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
                 threadLocalDriver.get().get(map.get("launchURL"));
-                threadLocalDriver.get().manage().window().maximize();
                 threadLocalDriver.get().manage().deleteAllCookies();
+                Thread.sleep(3000);
             }
             default -> throw new IllegalStateException("Unexpected value: " + map.get("automationName"));
         }
