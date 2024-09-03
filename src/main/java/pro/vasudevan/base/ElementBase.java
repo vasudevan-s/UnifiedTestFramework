@@ -59,18 +59,18 @@ public abstract class ElementBase implements IWebDriverConfig {
             case "id" -> by = By.id(locator);
             case "name" -> by = By.name(locator);
             case "linktext" -> by = By.linkText(locator);
-            case "partialLinkText" -> by = By.partialLinkText(locator);
-            case "className" -> by = By.className(locator);
-            case "tagName" -> by = By.tagName(locator);
+            case "partiallinktext" -> by = By.partialLinkText(locator);
+            case "classname" -> by = By.className(locator);
+            case "tagname" -> by = By.tagName(locator);
             case "css" -> by = By.cssSelector(locator);
             case "xpath" -> by = By.xpath(locator);
-            case "accessibilityId" -> AppiumBy.accessibilityId(locator);
-            case "iOSClassChain" -> AppiumBy.iOSClassChain(locator);
-            case "iOSNSPredicate" -> AppiumBy.iOSNsPredicateString(locator);
-            case "AndroidUIAutomator" -> AppiumBy.androidUIAutomator(locator);
-            case "AndroidViewMatcher" -> AppiumBy.androidViewMatcher(locator);
-            case "AndroidDataMatcher" -> AppiumBy.androidDataMatcher(locator);
-            case "AppiumCustom" -> AppiumBy.custom(locator);
+            case "accessibilityid" -> AppiumBy.accessibilityId(locator);
+            case "iosclasschain" -> AppiumBy.iOSClassChain(locator);
+            case "iosnspredicate" -> AppiumBy.iOSNsPredicateString(locator);
+            case "androiduiautomator" -> AppiumBy.androidUIAutomator(locator);
+            case "androidviewmatcher" -> AppiumBy.androidViewMatcher(locator);
+            case "androiddatamatcher" -> AppiumBy.androidDataMatcher(locator);
+            case "appiumcustom" -> AppiumBy.custom(locator);
             default -> throw new IllegalArgumentException("Invalid locator type defined in object repo");
         }
         return by;

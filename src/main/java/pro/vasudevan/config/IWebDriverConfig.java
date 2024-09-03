@@ -90,7 +90,7 @@ public interface IWebDriverConfig {
                         threadLocalDriver.get().manage().window().maximize();
                         break;
                 }
-                threadLocalDriver.get().manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
+                threadLocalDriver.get().manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
                 threadLocalDriver.get().get(map.get("launchURL"));
                 threadLocalDriver.get().manage().deleteAllCookies();
                 Thread.sleep(3000);
