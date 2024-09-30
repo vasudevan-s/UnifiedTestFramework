@@ -3,7 +3,7 @@ This project showcases automation best practices using the following open source
 
     TestNG
     Apache Maven
-    Java 21 (can be used with any Java version starting with 8).
+    Java 22 (can be used with any Java version starting with 8).
     Appium 2.x or greater
     Selenium 4.x or any newer version
 
