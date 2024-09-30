@@ -1,19 +1,17 @@
-package pro.vasudevan.misc;
+package pro.vasudevan.automation.unifiedtestframework.misc;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import pro.vasudevan.config.IWebDriverConfig;
+import pro.vasudevan.automation.unifiedtestframework.config.IWebDriverConfig;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.FluentWait;
-import pro.vasudevan.constants.Global;
+import pro.vasudevan.automation.unifiedtestframework.constants.Global;
 
 import java.io.File;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.UUID;
-import java.util.concurrent.TimeUnit;
 
 /*
 Created By: Vasudevan Sampath
@@ -50,7 +48,21 @@ public final class Common {
         return targetImagePath;
     }
 
+    public static <T> T takeScreenshot(By by, OutputType<T> outputType) {
+        return ((TakesScreenshot)
+                waitForAnyExpectedCondition(ExpectedConditions.presenceOfAllElementsLocatedBy(by))).
+                getScreenshotAs(outputType);
+    }
+
     public static void runTerminalCommand(String command) throws Exception {
         new ProcessBuilder(command).start();
+    }
+
+    public static String getTempDirectory() {
+        return System.getProperty("java.io.tmpdir");
+    }
+
+    public static String getUUID() {
+        return UUID.randomUUID().toString();
     }
 }

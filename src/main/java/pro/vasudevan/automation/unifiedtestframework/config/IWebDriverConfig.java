@@ -1,4 +1,4 @@
-package pro.vasudevan.config;
+package pro.vasudevan.automation.unifiedtestframework.config;
 
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
@@ -6,7 +6,6 @@ import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.ios.options.XCUITestOptions;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.flags.GeneralServerFlag;
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -15,12 +14,11 @@ import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
 import org.testng.ITestContext;
-import pro.vasudevan.constants.Global;
-import pro.vasudevan.helpers.IAppiumHelper;
+import pro.vasudevan.automation.unifiedtestframework.constants.Global;
+import pro.vasudevan.automation.unifiedtestframework.interfaces.IAppiumHelper;
 
 import java.time.Duration;
 import java.util.Map;
-import java.util.concurrent.TimeUnit;
 
 /*
 Created By: Vasudevan Sampath
@@ -68,29 +66,30 @@ public interface IWebDriverConfig {
             case null -> {
                 switch (map.get("browserName").toLowerCase()) {
                     case "chrome":
-                        WebDriverManager.chromedriver().setup();
+//                        WebDriverManager.chromedriver().setup();
                         ChromeOptions chromeOptions = new ChromeOptions();
                         chromeOptions.addArguments("--start-maximized");
                         threadLocalDriver.set(new ChromeDriver(chromeOptions));
                         break;
                     case "msedge":
-                        WebDriverManager.edgedriver().setup();
+//                        WebDriverManager.edgedriver().setup();
                         EdgeOptions edgeOptions = new EdgeOptions();
                         edgeOptions.addArguments("--start-maximized");
                         threadLocalDriver.set(new EdgeDriver(edgeOptions));
                         break;
                     case "safari":
-                        WebDriverManager.safaridriver().setup();
+//                        WebDriverManager.safaridriver().setup();
                         threadLocalDriver.set(new SafariDriver());
                         threadLocalDriver.get().manage().window().maximize();
                         break;
                     case "firefox":
-                        WebDriverManager.firefoxdriver().setup();
+//                        WebDriverManager.firefoxdriver().getWebDriverList()
+//                                .forEach(System.out::println);
                         threadLocalDriver.set(new FirefoxDriver());
                         threadLocalDriver.get().manage().window().maximize();
                         break;
                 }
-                threadLocalDriver.get().manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
+                threadLocalDriver.get().manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
                 threadLocalDriver.get().get(map.get("launchURL"));
                 threadLocalDriver.get().manage().deleteAllCookies();
                 Thread.sleep(3000);

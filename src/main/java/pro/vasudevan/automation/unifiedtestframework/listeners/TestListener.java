@@ -1,8 +1,8 @@
-package pro.vasudevan.listeners;
+package pro.vasudevan.automation.unifiedtestframework.listeners;
 
 import org.testng.*;
-import pro.vasudevan.config.IWebDriverConfig;
-import pro.vasudevan.misc.Common;
+import pro.vasudevan.automation.unifiedtestframework.config.IWebDriverConfig;
+import pro.vasudevan.automation.unifiedtestframework.misc.Common;
 
 import java.io.IOException;
 

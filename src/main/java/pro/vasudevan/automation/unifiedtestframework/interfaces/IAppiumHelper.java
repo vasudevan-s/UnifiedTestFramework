@@ -1,9 +1,10 @@
-package pro.vasudevan.helpers;
+package pro.vasudevan.automation.unifiedtestframework.interfaces;
 
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
 import io.appium.java_client.service.local.flags.GeneralServerFlag;
-import pro.vasudevan.misc.Common;
+import io.appium.java_client.service.local.flags.ServerArgument;
+import pro.vasudevan.automation.unifiedtestframework.misc.Common;
 
 import java.io.IOException;
 import java.net.ServerSocket;
@@ -19,6 +20,7 @@ public interface IAppiumHelper {
             AppiumDriverLocalService appiumDriverLocalService =
                     new AppiumServiceBuilder()
                             .withArgument(generalServerFlag)
+                            .withArgument(GeneralServerFlag.USE_PLUGINS, "gestures")
                             .usingAnyFreePort().build();
             appiumDriverLocalService.start();
             return appiumDriverLocalService;

@@ -1,8 +1,8 @@
-package pro.vasudevan.listeners;
+package pro.vasudevan.automation.unifiedtestframework.listeners;
 
 import org.testng.ISuite;
 import org.testng.ISuiteListener;
-import pro.vasudevan.constants.Global;
+import pro.vasudevan.automation.unifiedtestframework.constants.Global;
 
 import java.io.IOException;
 import java.nio.file.Files;
