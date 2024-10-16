@@ -28,7 +28,6 @@ public final class MobileHelper extends ElementBase implements IScrollHelper {
 
     private boolean isEndOfPageReached(String pageSource) {
         return pageSource.equals(getPageSource());
-//        return pageSource.equals(appiumDriver.getPageSource());
     }
 
     @Override

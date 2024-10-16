@@ -48,7 +48,6 @@ public class Global {
         PERCENT100(100);
 
         private final int value;
-
         SwipeScrollPercentage(final int newValue) {
             value = newValue;
         }

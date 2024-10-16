@@ -6,6 +6,7 @@ import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.ios.options.XCUITestOptions;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.flags.GeneralServerFlag;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -66,25 +67,24 @@ public interface IWebDriverConfig {
             case null -> {
                 switch (map.get("browserName").toLowerCase()) {
                     case "chrome":
-//                        WebDriverManager.chromedriver().setup();
+                        WebDriverManager.chromedriver().setup();
                         ChromeOptions chromeOptions = new ChromeOptions();
                         chromeOptions.addArguments("--start-maximized");
                         threadLocalDriver.set(new ChromeDriver(chromeOptions));
                         break;
                     case "msedge":
-//                        WebDriverManager.edgedriver().setup();
+                        WebDriverManager.edgedriver().setup();
                         EdgeOptions edgeOptions = new EdgeOptions();
                         edgeOptions.addArguments("--start-maximized");
                         threadLocalDriver.set(new EdgeDriver(edgeOptions));
                         break;
                     case "safari":
-//                        WebDriverManager.safaridriver().setup();
+                        WebDriverManager.safaridriver().setup();
                         threadLocalDriver.set(new SafariDriver());
                         threadLocalDriver.get().manage().window().maximize();
                         break;
                     case "firefox":
-//                        WebDriverManager.firefoxdriver().getWebDriverList()
-//                                .forEach(System.out::println);
+                        WebDriverManager.firefoxdriver().setup();
                         threadLocalDriver.set(new FirefoxDriver());
                         threadLocalDriver.get().manage().window().maximize();
                         break;
@@ -92,7 +92,7 @@ public interface IWebDriverConfig {
                 threadLocalDriver.get().manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
                 threadLocalDriver.get().get(map.get("launchURL"));
                 threadLocalDriver.get().manage().deleteAllCookies();
-                Thread.sleep(3000);
+//                Thread.sleep(3000);
             }
             default -> throw new IllegalStateException("Unexpected value: " + map.get("automationName"));
         }

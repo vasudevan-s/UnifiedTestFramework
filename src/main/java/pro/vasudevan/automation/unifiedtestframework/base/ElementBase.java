@@ -76,29 +76,28 @@ public abstract class ElementBase implements IWebDriverConfig {
     }
 
     protected static Triplet<By, String, String> getByObject(String propertyKey) {
-        By by = null;
         String[] splitString = getValue(propertyKey).split("@@");
         String locator = splitString[0];
         String locatorType = mapLocatorType(splitString[1]);
 
-        switch (splitString[1].toLowerCase()) {
-            case "id" -> by = By.id(locator);
-            case "name" -> by = By.name(locator);
-            case "linktext" -> by = By.linkText(locator);
-            case "partiallinktext" -> by = By.partialLinkText(locator);
-            case "classname" -> by = By.className(locator);
-            case "tagname" -> by = By.tagName(locator);
-            case "css" -> by = By.cssSelector(locator);
-            case "xpath" -> by = By.xpath(locator);
-            case "accessibilityid", "accessibility id" -> by = AppiumBy.accessibilityId(locator);
-            case "iosclasschain", "-ios class chain" -> by = AppiumBy.iOSClassChain(locator);
+        By by = switch(splitString[1].toLowerCase()) {
+            case "id" -> By.id(locator);
+            case "name" -> By.name(locator);
+            case "linktext" -> By.linkText(locator);
+            case "partiallinktext" -> By.partialLinkText(locator);
+            case "classname" -> By.className(locator);
+            case "tagname" -> By.tagName(locator);
+            case "css" -> By.cssSelector(locator);
+            case "xpath" -> By.xpath(locator);
+            case "accessibilityid", "accessibility id" -> AppiumBy.accessibilityId(locator);
+            case "iosclasschain", "-ios class chain" -> AppiumBy.iOSClassChain(locator);
             case "iosnspredicate", "-ios predicate string" -> by = AppiumBy.iOSNsPredicateString(locator);
-            case "androiduiautomator" -> by = AppiumBy.androidUIAutomator(locator);
-            case "androidviewmatcher" -> by = AppiumBy.androidViewMatcher(locator);
-            case "androiddatamatcher" -> by = AppiumBy.androidDataMatcher(locator);
-            case "appiumcustom" -> by = AppiumBy.custom(locator);
+            case "androiduiautomator" -> AppiumBy.androidUIAutomator(locator);
+            case "androidviewmatcher" -> AppiumBy.androidViewMatcher(locator);
+            case "androiddatamatcher" -> AppiumBy.androidDataMatcher(locator);
+            case "appiumcustom" -> AppiumBy.custom(locator);
             default -> throw new IllegalArgumentException("Invalid locator type defined in object repo");
-        }
+        };
         return Triplet.with(by, locator, locatorType);
     }
 
