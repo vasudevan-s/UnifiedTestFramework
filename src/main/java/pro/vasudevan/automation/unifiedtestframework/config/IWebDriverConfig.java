@@ -68,7 +68,7 @@ public interface IWebDriverConfig {
             case null -> {
                 switch (map.get("browserName").toLowerCase()) {
                     case "chrome":
-                        WebDriverManager.chromedriver().setup();
+                        WebDriverManager.chromedriver().browserVersion("120").setup();
                         ChromeOptions chromeOptions = new ChromeOptions();
                         chromeOptions.addArguments("--start-maximized");
                         threadLocalDriver.set(new ChromeDriver(chromeOptions));
