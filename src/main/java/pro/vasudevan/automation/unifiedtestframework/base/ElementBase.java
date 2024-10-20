@@ -56,6 +56,17 @@ public abstract class ElementBase implements IWebDriverConfig {
         return didExist;
     }
 
+    protected static boolean didElementExist(String propertyKey) {
+        boolean didExist;
+        try {
+            getByObject(propertyKey);
+            didExist = true;
+        } catch (Exception ex) {
+            didExist = false;
+        }
+        return didExist;
+    }
+
     protected static WebElement findElement(By by) {
         return getDriver().findElement(by);
     }

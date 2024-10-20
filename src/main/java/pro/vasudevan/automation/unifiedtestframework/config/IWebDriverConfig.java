@@ -30,7 +30,7 @@ Created By: Vasudevan Sampath
 public interface IWebDriverConfig {
     ThreadLocal<WebDriver> threadLocalDriver = new ThreadLocal<>();
 
-    static void initDriver(ITestContext testContext) throws InterruptedException {
+    static void initDriver(ITestContext testContext) {
         Map<String, String> map = testContext.getCurrentXmlTest().getLocalParameters();
 
         switch (map.get("automationName")) {
@@ -59,6 +59,7 @@ public interface IWebDriverConfig {
                 uiAutomator2Options.setNewCommandTimeout(Duration.ofSeconds(600));
                 uiAutomator2Options.setAppPackage(map.get("packageName"));
                 uiAutomator2Options.setAppActivity(map.get("activityName"));
+                uiAutomator2Options.setUiautomator2ServerLaunchTimeout(Duration.ofSeconds(60));
                 uiAutomator2Options.setCapability("appium:systemPort", IAppiumHelper.getAnyAvailablePort());
                 try (AppiumDriverLocalService appiumDriverLocalService = IAppiumHelper.start(GeneralServerFlag.RELAXED_SECURITY)) {
                     threadLocalDriver.set(new AndroidDriver(appiumDriverLocalService.getUrl(), uiAutomator2Options));
