@@ -71,8 +71,6 @@ public interface IWebDriverConfig {
                         WebDriverManager.chromedriver().setup();
                         ChromeOptions chromeOptions = new ChromeOptions();
                         chromeOptions.addArguments("--start-maximized");
-                        // added for session not created: DevToolsActivePort file doesn't exist in Github Actions
-                        chromeOptions.addArguments("--no-sandbox");
                         threadLocalDriver.set(new ChromeDriver(chromeOptions));
                         break;
                     case "msedge":
