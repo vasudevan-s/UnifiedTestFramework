@@ -20,6 +20,7 @@ import pro.vasudevan.automation.unifiedtestframework.interfaces.IAppiumHelper;
 
 import java.time.Duration;
 import java.util.Map;
+import java.util.Optional;
 
 /*
 Created By: Vasudevan Sampath
@@ -71,7 +72,9 @@ public interface IWebDriverConfig {
                         WebDriverManager.chromedriver().setup();
                         ChromeOptions chromeOptions = new ChromeOptions();
                         chromeOptions.addArguments("--start-maximized");
-                        chromeOptions.addArguments("--headless");
+                        if (map.containsKey("headless")) {
+                            if (map.get("headless").equals("true")) chromeOptions.addArguments("--headless");
+                        }
 //                        chromeOptions.addArguments("--remote-debugging-port=9222");
 //                        chromeOptions.addArguments("--no-sandbox");
                         threadLocalDriver.set(new ChromeDriver(chromeOptions));
