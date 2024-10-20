@@ -72,7 +72,7 @@ public interface IWebDriverConfig {
                         ChromeOptions chromeOptions = new ChromeOptions();
                         chromeOptions.addArguments("--start-maximized");
                         chromeOptions.addArguments("--headless");
-                        chromeOptions.addArguments("--remote-debugging-port=9222");
+//                        chromeOptions.addArguments("--remote-debugging-port=9222");
                         chromeOptions.addArguments("--no-sandbox");
                         threadLocalDriver.set(new ChromeDriver(chromeOptions));
                         break;
