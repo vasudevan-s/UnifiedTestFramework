@@ -1,6 +1,5 @@
 package pro.vasudevan.automation.unifiedtestframework.interfaces;
 
-import io.appium.java_client.AppiumBy;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.ios.IOSDriver;
 import org.openqa.selenium.By;

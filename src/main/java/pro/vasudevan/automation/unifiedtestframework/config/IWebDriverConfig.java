@@ -20,7 +20,6 @@ import pro.vasudevan.automation.unifiedtestframework.interfaces.IAppiumHelper;
 
 import java.time.Duration;
 import java.util.Map;
-import java.util.Optional;
 
 /*
 Created By: Vasudevan Sampath

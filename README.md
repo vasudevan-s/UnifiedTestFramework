@@ -37,16 +37,9 @@ Setting up your environment for Appium (iOS/Android) and Selenium automation:
     * export ANDROID_HOME=$HOME/Library/Android/sdk/
     * export PATH=$PATH:$ANDROID_HOME/tools
     * export PATH=$PATH:$ANDROID_HOME/platform-tools
-16. npm install @appium/doctor -g
-17. Setup required Android Emulators by running Android Studio
-18. Run Xcode simulator and validate
-19. Run Appium Inspector and setup configs for iOS and Android
-20. Reinstall Xcode if any errors
-21. If Android issue on real device,
-    * adb uninstall io.appium.uiautomator2.server
-    * adb uninstall io.appium.uiautomator2.server.test
-    * adb uninstall io.appium.unlock
-    * adb uninstall io.appium.settings
-22. Check in Xcode Settings…Location for simulator -> may ask to confirm password
-23. Run: appium-doctor and fix any issues (if any)
+18. npm install @appium/doctor -g
+19. Setup required Android Emulators by running Android Studio Run Xcode simulator and validate
+20. Run Appium Inspector and setup configs for iOS and Android
+21. Check in Xcode Settings…Location for simulator -> may ask to confirm password
+22. Run: appium-doctor and fix any issues (if any)
 ****************************************************************************************************************************************************

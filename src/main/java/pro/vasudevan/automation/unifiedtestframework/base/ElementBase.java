@@ -3,7 +3,6 @@ package pro.vasudevan.automation.unifiedtestframework.base;
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.AppiumDriver;
 import org.apache.commons.io.FileUtils;
-import org.javatuples.Pair;
 import org.javatuples.Triplet;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -13,7 +12,6 @@ import static pro.vasudevan.automation.unifiedtestframework.config.IWebDriverCon
 import java.io.File;
 import java.io.FileInputStream;
 import java.util.*;
-import java.util.stream.Stream;
 
 /*
 Created By: Vasudevan Sampath
@@ -30,7 +28,7 @@ public abstract class ElementBase implements IWebDriverConfig {
         final Properties properties = new Properties();
 
         if (map.isEmpty()) {
-            properties.load(new FileInputStream(new File(FileUtils.getFile("src", "test", "resources", "objectrepo", "app.repo.properties").getAbsolutePath())));
+            properties.load(new FileInputStream((FileUtils.getFile("src", "test", "resources", "objectrepo", "app.repo.properties").getAbsolutePath())));
             map = (Map) properties;    // map Properties (key/value pair) to a Hashmap
         }
     }
@@ -102,7 +100,7 @@ public abstract class ElementBase implements IWebDriverConfig {
             case "xpath" -> By.xpath(locator);
             case "accessibilityid", "accessibility id" -> AppiumBy.accessibilityId(locator);
             case "iosclasschain", "-ios class chain" -> AppiumBy.iOSClassChain(locator);
-            case "iosnspredicate", "-ios predicate string" -> by = AppiumBy.iOSNsPredicateString(locator);
+            case "iosnspredicate", "-ios predicate string" -> AppiumBy.iOSNsPredicateString(locator);
             case "androiduiautomator" -> AppiumBy.androidUIAutomator(locator);
             case "androidviewmatcher" -> AppiumBy.androidViewMatcher(locator);
             case "androiddatamatcher" -> AppiumBy.androidDataMatcher(locator);

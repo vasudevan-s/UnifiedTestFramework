@@ -3,7 +3,6 @@ package pro.vasudevan.automation.unifiedtestframework.interfaces;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
 import io.appium.java_client.service.local.flags.GeneralServerFlag;
-import io.appium.java_client.service.local.flags.ServerArgument;
 import pro.vasudevan.automation.unifiedtestframework.misc.Common;
 
 import java.io.IOException;
